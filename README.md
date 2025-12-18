@@ -1,3 +1,4 @@
+# Software Engineering Internship Assignment
 # TaskMate - Task Management System
 
 This web application allows users to efficiently manage their tasks, categorize them, and track progress through an intuitive dashboard.  
