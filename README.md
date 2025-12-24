@@ -1,61 +1,137 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Software Engineering Internship Assignment
+# TaskMate - Task Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This web application allows users to efficiently manage their tasks, categorize them, and track progress through an intuitive dashboard.  
+Developed as part of an internship  project.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+##  Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 🔐 **User Authentication** – Login, Register, Logout (via Laravel Breeze)
+- 👥 **User Roles** – Admin and User
+- 🗂️ **Task Management (CRUD)** – Create, view, update, and delete tasks
+- 🏷️ **Category Management** – Manage categories and assign them to tasks
+- 📅 **Task Deadlines & Status Tracking**
+- 📊 **Dashboard Overview** – with progress counts & summaries
+- 🖨️ **PDF Report Generation**
+- 💻 **Responsive UI** – Built with Tailwind CSS (light & dark mode)
+- 🧱 **Clean MVC Laravel Architecture**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+##  Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| Layer | Technology |
+|-------|-------------|
+| Framework | **Laravel 11** |
+| Frontend | **Blade Templates + Tailwind CSS** |
+| Database | **MySQL** |
+| Authentication | **Laravel Breeze / TaskMate** |
+| PDF Generation | **barryvdh/laravel-dompdf** |
+| Version Control | **Git & GitHub** |
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+##  Installation Guide
 
-## Laravel Sponsors
+Follow these steps to set up and run the project locally 👇
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/Aathi125/Task-Management-Web-Application/tree/main
+```
 
-## Contributing
+### 2️⃣ Install Dependencies
+```bash
+composer install
+npm install
+npm run dev
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3️⃣ Create Environment File
+- cp .env.example .env
+### 4️⃣ Configure Database
+```
+Open the .env file and update your database credentials:
 
-## Code of Conduct
+DB_DATABASE=task__management
+DB_USERNAME=root
+DB_PASSWORD=
+```
+### 5️⃣ Generate Application Key
+```
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 6️⃣ Run Migrations and Seeders
+```
+php artisan migrate --seed
+```
 
-## Security Vulnerabilities
+###7️⃣ Start the Development Server
+```
+php artisan serve
+```
+---
+#### Now open your browser and visit 👉 http://localhost:8000
+---
+### 🧩 Folder Structure
+```bash
+app/
+ ├── Http/
+ │    └── Controllers/
+ │         ├── TaskController.php
+ │         └── CategoryController.php
+ ├── Models/
+ │    ├── Task.php
+ │    └── Category.php
+resources/
+ ├── views/
+ │    ├── tasks/
+ │    ├── categories/
+ │    └── layouts/
+routes/
+ └── web.php
+```
+---
+### 👑 Default Admin Credentials (if seeded)
+``` bash
+Email: admin@example.com
+Password: password
+```
+### 💻 How It Works
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Admin Login
+- Can manage both tasks and categories.
+- Assign tasks to users and set deadlines.
+- View progress statistics on the dashboard.
+- User Login
+- Can view only their assigned tasks.
+- Update task statuses as they progress.
+- Monitor pending and completed tasks.
+- Dark Mode Support
+- Automatically switches between light and dark themes based on system settings.
+---
 
-## License
+### 🧠 Project Overview
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+TaskMate was built using a modern Laravel stack with Tailwind CSS and follows a clean MVC structure.
+It demonstrates practical implementation of:
+
+- CRUD operations
+- Middleware-based authentication
+- Role-based access control (admin/user)
+- Dynamic data binding using Blade
+- Clean UI built for performance and accessibility
+---
+
+### 👨‍💻 Developer Information
+
+Developed by: Aathika Ilmudeen
+- 🎓 BSc (Hons) in Information Technology – Sri Lanka Institute of Information Technology (SLIIT)
+- 💼 Intern – Software Engineer
+- 🌐 Project: TaskMate – Laravel Task Management System
+- 💡 Passionate about: Laravel, TailwindCSS, and scalable web solutions.
