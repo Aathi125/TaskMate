@@ -5,7 +5,6 @@ This web application allows users to efficiently manage their tasks, categorize 
 Developed as part of an internship  project.
 
 ---
----
 ![Website Image](assets/Appview.png)
 
 ##  Features
